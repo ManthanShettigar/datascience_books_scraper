@@ -15,7 +15,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd Automation-scripts/Datascience_books_Scraper 
+  cd Datascience_books_Scraper 
 ```
 
 Install dependencies
