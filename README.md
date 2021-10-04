@@ -32,10 +32,7 @@ Run the script
 Wait for few seconds then check your directory for file named :
 ```
 500Datasciencebooks.csv
-
 ```
-## Author
 
-- [@ManthanShettigar](https://github.com/ManthanShettigar)
 
   
