@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+import numpy as np
 Book_name = []
 Year = []
 Publisher = []
@@ -16,24 +17,24 @@ for j in range(1, 11):
         try:
             Book_name.append(i.find('h3').text.strip())
         except Exception:
-            Book_name.append('nan')
+            Book_name.append(np.nan)
         # year
         try:
             Year.append(
                 i.find('div', class_='property_year').text.strip()[6:10])
         except Exception:
-            Year.append('nan')
+            Year.append(np.nan)
         # publisher
         try:
             Publisher.append(
                 i.find('div', attrs={'title': 'Publisher'}).text.strip())
         except Exception:
-            Publisher.append('nan')
+            Publisher.append(np.nan)
         # Author
         try:
             Author.append(i.find('div', class_='authors').text.strip())
         except Exception:
-            Author.append('nan')
+            Author.append(np.nan)
 
 file_name = '500Datasciencebooks.csv'
 
@@ -43,3 +44,5 @@ with open(file_name, 'w') as file:
 
     for i in range(1, len(Book_name)):
         writer.writerow([i, Book_name[i], Publisher[i], Author[i], Year[i]])
+
+print('Done with scraping check your working directory for csv file ')
